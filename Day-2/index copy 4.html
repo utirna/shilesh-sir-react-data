@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-2</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script>
+      var numberOne = 10;
+      var numberTwo = 10;
+
+      function add(varOne, varTwo, callback) {
+        var addResult = varOne + varTwo;
+        callback(addResult);
+      }
+
+      function div(varOne, varTwo, callback) {
+        var divResult = varOne / varTwo;
+        callback(divResult);
+      }
+
+      function sub(varOne, varTwo, callback) {
+        var subResult = varOne - varTwo;
+        callback(subResult);
+      }
+
+      add(numberOne, numberTwo, function (addResult) {
+        //20
+        div(addResult, 0, function (divResult) {
+          //2
+          sub(divResult, 6, function (subResult) {
+            console.log(subResult);
+          });
+        });
+      });
+      /* promises */
+    </script>
+  </body>
+</html>

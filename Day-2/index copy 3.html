@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-1</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script>
+      function add() {
+        var result = 10 + 20;
+        function innerFun() {
+          result = result + 1;
+          return result;
+        }
+        return innerFun;
+      }
+
+      var fun = add();
+      var output = fun(); //31
+      fun(); //32
+      var output = fun(); //33
+
+      var fun2 = add();
+      var output = fun2(); //34
+      console.log(output);
+    </script>
+  </body>
+</html>

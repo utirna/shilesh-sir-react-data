@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-1</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script>
+      /*ES 5*/
+      function FunA() {
+        this.sample = 10;
+
+        this.print = function () {
+          var a = () => {
+            console.log(this.sample);
+          };
+          a();
+        };
+      }
+
+      var obj = new FunA();
+      obj.print();
+    </script>
+  </body>
+</html>

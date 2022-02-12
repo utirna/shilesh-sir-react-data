@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-2</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script>
+      var numberOne = 10;
+      var numberTwo = 10;
+
+      async function add(varOne, varTwo) {
+        var addResult = varOne + varTwo;
+        return addResult;
+      }
+
+      async function div(varOne, varTwo) {
+        if (varTwo === 0) {
+          throw Error("cant divide a number by zero");
+        } else {
+          var divResult = varOne / varTwo;
+          return divResult;
+        }
+      }
+
+      async function sub(varOne, varTwo) {
+        var subResult = varOne - varTwo;
+        return subResult;
+      }
+
+      /* add(numberOne, numberTwo)
+        .then(function (addResult) {
+          return div(addResult, 0);
+        })
+        .then((divResult) => {
+          console.log(divResult);
+          return sub(divResult, 5);
+        })
+        .then((subResult) => {
+          console.log(subResult);
+        })
+        .catch(function (error) {
+          console.log("rejected", error);
+        });*/
+
+      async function a() {
+        try {
+          let addResult = await add(numberOne, numberTwo);
+          let divResult = await div(addResult, 1);
+          let subResult = await sub(divResult, 5);
+
+          console.log(subResult);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      a();
+      /* add(numberOne, numberTwo, function (addResult) {
+        //20
+        div(addResult, 0, function (divResult) {
+          //2
+          sub(divResult, 6, function (subResult) {
+            console.log(subResult);
+          });
+        });
+      });*/
+      /* promises */
+    </script>
+  </body>
+</html>
